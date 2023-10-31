@@ -105,6 +105,7 @@
 		D30493552AF15C3400FBDD88 /* HW37_PsychologicalTest */ = {
 			isa = PBXGroup;
 			children = (
+				D30493642AF15C3600FBDD88 /* Info.plist */,
 				D304938F2AF169A700FBDD88 /* Supporting */,
 				D304935C2AF15C3400FBDD88 /* Main.storyboard */,
 				D30493902AF169B300FBDD88 /* Model */,
@@ -147,7 +148,6 @@
 				D30493582AF15C3400FBDD88 /* SceneDelegate.swift */,
 				D304935F2AF15C3600FBDD88 /* Assets.xcassets */,
 				D30493612AF15C3600FBDD88 /* LaunchScreen.storyboard */,
-				D30493642AF15C3600FBDD88 /* Info.plist */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
