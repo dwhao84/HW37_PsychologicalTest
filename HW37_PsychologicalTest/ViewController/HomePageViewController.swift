@@ -19,9 +19,10 @@ class HomePageViewController: UIViewController {
     let pictureNameArray: [String] = [
         "HomePage_Tokyo",
         "HomePage_Toronto",
-        "HomePage_Rome"
+        "HomePage_Rome",
+        "HomePage_London",
+        "HomePage_Sydney"
     ]
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,6 @@ class HomePageViewController: UIViewController {
         print("IntoTheHomePageVC")
 
     }
-
 
     func configureUI () {
 
