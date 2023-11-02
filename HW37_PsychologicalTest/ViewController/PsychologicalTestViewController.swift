@@ -31,7 +31,7 @@ class PsychologicalTestViewController: UIViewController {
 
     func configureUI () {
         nextPageButton.setTitle("Next Page", for: .normal)
-        nextPageButton.tintColor = UIColor(red: 0/255, green: 144/255, blue: 81/255, alpha: 1)
+        nextPageButton.tintColor = UIColor(red: 24/255, green: 153/255, blue: 105/255, alpha: 1)
         nextPageButton.isUserInteractionEnabled = true
         nextPageButton.isEnabled = true
 

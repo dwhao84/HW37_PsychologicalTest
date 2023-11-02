@@ -19,6 +19,7 @@
 		D304938A2AF15C5B00FBDD88 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30493872AF15C5A00FBDD88 /* HomePageViewController.swift */; };
 		D304938B2AF15C5B00FBDD88 /* PsychologicalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30493882AF15C5A00FBDD88 /* PsychologicalTestViewController.swift */; };
 		D304938E2AF1698E00FBDD88 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D304938D2AF1698E00FBDD88 /* Data.swift */; };
+		D30493922AF234CC00FBDD88 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30493912AF234CC00FBDD88 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D30493872AF15C5A00FBDD88 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		D30493882AF15C5A00FBDD88 /* PsychologicalTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsychologicalTestViewController.swift; sourceTree = "<group>"; };
 		D304938D2AF1698E00FBDD88 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D30493912AF234CC00FBDD88 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				D30493872AF15C5A00FBDD88 /* HomePageViewController.swift */,
 				D30493882AF15C5A00FBDD88 /* PsychologicalTestViewController.swift */,
 				D30493862AF15C5A00FBDD88 /* ResultViewController.swift */,
+				D30493912AF234CC00FBDD88 /* MapViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				D30493592AF15C3400FBDD88 /* SceneDelegate.swift in Sources */,
 				D304938A2AF15C5B00FBDD88 /* HomePageViewController.swift in Sources */,
 				D30493892AF15C5B00FBDD88 /* ResultViewController.swift in Sources */,
+				D30493922AF234CC00FBDD88 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
