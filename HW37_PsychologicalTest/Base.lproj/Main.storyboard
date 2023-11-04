@@ -203,13 +203,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomePage_Tokyo" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-Vs-Pbh">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomePage_Tokyo" translatesAutoresizingMaskIntoConstraints="NO" id="EwG-Vs-Pbh">
                                 <rect key="frame" x="39" y="152" width="350" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="qiM-aL-qEk" appends="YES" id="gH8-sZ-Vfl"/>
+                                    <outletCollection property="gestureRecognizers" destination="VPf-F7-p3O" appends="YES" id="G4N-LH-uhr"/>
+                                    <outletCollection property="gestureRecognizers" destination="o18-8b-d7D" appends="YES" id="Uz1-6W-Z0o"/>
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-3u-CKg">
@@ -265,13 +266,18 @@ own adventure</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KH-K0-5ed" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="qiM-aL-qEk">
+                <swipeGestureRecognizer direction="left" id="VPf-F7-p3O" userLabel="leftSwipe">
                     <connections>
-                        <outlet property="delegate" destination="91G-fm-14c" id="3fG-UQ-ekX"/>
+                        <action selector="changePageBySwipe:" destination="UmK-mv-AHK" id="3VA-4D-DfG"/>
                     </connections>
-                </tapGestureRecognizer>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="o18-8b-d7D" userLabel="rightSwipe">
+                    <connections>
+                        <action selector="changePageBySwipe:" destination="UmK-mv-AHK" id="gSR-Y5-rBs"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1980.8411214953269" y="-12.311015118790497"/>
+            <point key="canvasLocation" x="1935" y="-12"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dwN-mq-zCF">

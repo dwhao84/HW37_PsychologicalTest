@@ -53,6 +53,7 @@ class HomePageViewController: UIViewController {
         imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 175
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
         view.addSubview(imageView)
 
         // pageControl
@@ -67,6 +68,24 @@ class HomePageViewController: UIViewController {
         imageView.image = UIImage(named: pictureNameArray[index])
     }
 
+    @IBAction func changePageBySwipe(_ sender: UISwipeGestureRecognizer) {
+
+        if sender.direction == .left {
+            index = (index - 1 + pictureNameArray.count ) % pictureNameArray.count
+            imageView.image = UIImage(named: pictureNameArray[index])
+
+            print(index)
+            print("Left Swipe")
+
+        } else if sender.direction == .right {
+            index = (index + 1) % pictureNameArray.count
+            imageView.image = UIImage(named: pictureNameArray[index])
+
+            print(index)
+            print("Right Swipe")
+        }
+
+    }
 
 
 
