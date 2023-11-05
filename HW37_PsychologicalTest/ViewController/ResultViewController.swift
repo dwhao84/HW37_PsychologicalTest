@@ -12,9 +12,12 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var contentImageView: UIImageView!
     
     @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var imagePageControl: UIPageControl!
-
     @IBOutlet weak var findYourPlaceButton: UIButton!
+
+    @IBOutlet weak var pageControl: UIPageControl!
+
+
+    var resultIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +28,71 @@ class ResultViewController: UIViewController {
     }
 
     func configureUI () {
+
+        // findYourPlaceButton
         findYourPlaceButton.setTitle("Find your Place on Map!", for: .normal)
         findYourPlaceButton.tintColor = UIColor(red: 24/255, green: 153/255, blue: 105/255, alpha: 1)
         findYourPlaceButton.isUserInteractionEnabled = true
         findYourPlaceButton.isEnabled = true
+        view.addSubview(findYourPlaceButton)
+
+        // contentImageView
+        contentImageView.image = UIImage(named: "")
+        contentImageView.layer.cornerRadius = 10
+        contentImageView.clipsToBounds = true
+        contentImageView.isUserInteractionEnabled = true
+        view.addSubview(contentImageView)
+
+        // pageControl
+        pageControl.numberOfPages = 5
+        pageControl.currentPage = 0
+        pageControl.currentPageIndicatorTintColor = .white
+        view.addSubview(pageControl)
+
+
+        contentTextView.delegate = self
+        contentTextView.textColor = .darkGray
+        contentTextView.isSelectable = true
+        contentTextView.isFindInteractionEnabled = true
+        view.addSubview(contentTextView)
+
+
     }
 
-    
+    func updateTextViewContent() {
+        // Assuming resultIndex is defined somewhere in your code and within the bounds of citiesDescription array
+        contentTextView.text = citiesDescription[resultIndex]["description"]
 
+        var cityNamesText = ""  // Renamed to avoid confusion with "cityName"
+
+        for cityInfo in citiesDescription {
+            if let name = cityInfo["cityName"] {
+                cityNamesText += name + "\n"  // Appends the city name to the cityNamesText string
+            }
+        }
+        print(cityNamesText)
+    }
+
+
+
+    @IBAction func imageViewPageChanged(_ sender: UISwipeGestureRecognizer) {
+
+        if sender.direction == .left {
+
+        } else if sender.direction == .right {
+
+        }
+    }
+
+    @IBAction func pageControlValueChanged(_ sender: UIPageControl) {
+
+    }
+
+
+
+
+}
+
+extension ResultViewController: UITextViewDelegate {
 
 }

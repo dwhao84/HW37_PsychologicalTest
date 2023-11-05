@@ -12,8 +12,8 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
 
-    var latitude: Double = Double()
-    var longitude: Double = Double()
+    var latitude: Double = 23.6978
+    var longitude: Double = 120.9605
 
     var annotation = MKPointAnnotation()
 
@@ -36,8 +36,10 @@ class MapViewController: UIViewController {
             center:    CLLocationCoordinate2D(
             latitude:  CLLocationDegrees(latitude),
             longitude: CLLocationDegrees(longitude)),
-            latitudinalMeters: 1000,
-            longitudinalMeters: 1000)
+            latitudinalMeters: 10000,
+            longitudinalMeters: 10000)
+        mapView.isZoomEnabled = true
+        mapView.mapType = .hybrid
 
         //annotation
 
@@ -50,4 +52,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate {
 
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        print("mapViewDidFinishLoadingMap")
+    }
 }

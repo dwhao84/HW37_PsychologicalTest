@@ -155,10 +155,18 @@
                                 <rect key="frame" x="39" y="113" width="350" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5ou-0x-fBW" appends="YES" id="Dwm-UM-VUQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="Wci-oH-s5f" appends="YES" id="NWv-B8-gbd"/>
+                                </connections>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-Os-WQc">
                                 <rect key="frame" x="156" y="437" width="116" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pageControlValueChanged:" destination="fzF-DN-KoI" eventType="valueChanged" id="Bwv-57-xnA"/>
+                                </connections>
                             </pageControl>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-ru-ISb">
                                 <rect key="frame" x="64" y="501" width="300" height="248"/>
@@ -188,10 +196,20 @@
                         <outlet property="contentImageView" destination="3Z1-J4-3rA" id="tOe-UI-Dva"/>
                         <outlet property="contentTextView" destination="jzx-ru-ISb" id="dOj-89-kIY"/>
                         <outlet property="findYourPlaceButton" destination="m0N-e0-Mjg" id="a8Y-3O-H1b"/>
-                        <outlet property="imagePageControl" destination="cTF-Os-WQc" id="6El-1g-oVh"/>
+                        <outlet property="pageControl" destination="cTF-Os-WQc" id="gjG-gf-c6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xw1-Eg-1rM" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5ou-0x-fBW" userLabel="rightSwipe">
+                    <connections>
+                        <action selector="imageViewPageChanged:" destination="fzF-DN-KoI" id="Omh-Tz-m6F"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Wci-oH-s5f" userLabel="leftSwipe">
+                    <connections>
+                        <action selector="imageViewPageChanged:" destination="fzF-DN-KoI" id="TvF-b6-URe"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3614.0186915887848" y="-12.311015118790497"/>
         </scene>

@@ -30,34 +30,45 @@ let cityCoordinates: [(name: String, latitude: Double, longitude: Double)] = [
     ("Chicago", 41.8781, -87.6298)
 ]
 
-
-let climateChoices: [(description: String, city: String)] = [
-    ("Mild with distinct seasons", "Tokyo"),
-    ("Warm and sunny", "Sydney"),
-    ("Cool and rainy", "London"),
-    ("Cold with snow", "Toronto")
+let combinedChoices: [[String: Any]] = [
+    [
+        "question": "What is your favorite weather?",
+        "choices": [
+            ["description": "Mild with distinct seasons", "city": "Tokyo"],
+            ["description": "Warm and sunny", "city": "Sydney"],
+            ["description": "Cool and rainy", "city": "London"],
+            ["description": "Cold with snow", "city": "Toronto"]
+        ]
+    ],
+    [
+        "question": "What is your pace of life?",
+        "choices": [
+            ["description": "Fast-paced and energetic", "city": "New York"],
+            ["description": "Artistic with a rich history", "city": "Paris"],
+            ["description": "Relaxed and close to nature", "city": "Auckland"],
+            ["description": "Technologically advanced and efficient", "city": "Tokyo"]
+        ]
+    ],
+    [
+        "question": "What is your food preference?",
+        "choices": [
+            ["description": "International cuisine and cultural diversity", "city": "New York"],
+            ["description": "Traditional dishes and authentic flavors", "city": "Rome"],
+            ["description": "Abundant seafood and fresh fruits", "city": "Sydney"],
+            ["description": "Convenient fast food and a variety of snacks", "city": "Seoul"]
+        ]
+    ],
+    [
+        "question": "What is your preferred leisure activity?",
+        "choices": [
+            ["description": "Outdoor adventures and exploration", "city": "Vancouver"],
+            ["description": "Shopping and fashion", "city": "Paris"],
+            ["description": "Cultural arts and museum visits", "city": "London"],
+            ["description": "Music and nightlife", "city": "Chicago"]
+        ]
+    ]
 ]
 
-let paceOfLifeChoices: [(description: String, city: String)] = [
-    ("Fast-paced and energetic", "New York"),
-    ("Artistic with a rich history", "Paris"),
-    ("Relaxed and close to nature", "Auckland"),
-    ("Technologically advanced and efficient", "Tokyo")
-]
-
-let foodCultureChoices: [(description: String, city: String)] = [
-    ("International cuisine and cultural diversity", "New York"),
-    ("Traditional dishes and authentic flavors", "Rome"),
-    ("Abundant seafood and fresh fruits", "Sydney"),
-    ("Convenient fast food and a variety of snacks", "Seoul")
-]
-
-let leisureActivitiesChoices: [(description: String, city: String)] = [
-    ("Outdoor adventures and exploration", "Vancouver"),
-    ("Shopping and fashion", "Paris"),
-    ("Cultural arts and museum visits", "London"),
-    ("Music and nightlife", "Chicago")
-]
 
 
 let citiesDescription: [[String: String]] = [

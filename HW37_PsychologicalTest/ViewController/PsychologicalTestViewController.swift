@@ -18,7 +18,8 @@ class PsychologicalTestViewController: UIViewController {
     @IBOutlet weak var selectButtonFour: UIButton!
 
     @IBOutlet weak var nextPageButton: UIButton!
-    
+
+    var index: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +46,7 @@ class PsychologicalTestViewController: UIViewController {
             view.addSubview(selectionButtons)
         }
 
-        selectButtonOne.setTitle("TEST 1", for: .normal)
-        selectButtonTwo.setTitle("TEST 2", for: .normal)
-        selectButtonThree.setTitle("TEST 3", for: .normal)
-        selectButtonFour.setTitle("TEST 4", for: .normal)
-
-        titleLabel.text = "TEST"
+        titleLabel.text = "Question\(index + 1)"
         titleLabel.numberOfLines = 0
         titleLabel.textAlignment = .left
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -59,23 +55,60 @@ class PsychologicalTestViewController: UIViewController {
         contentLabel.numberOfLines = 0
         contentLabel.textAlignment = .left
         contentLabel.adjustsFontSizeToFitWidth = true
+
+        index = Int.random(in: 0...combinedChoices.count - 1)
+
+        updateContentLabel(index: index)
+        updateSelectionButtons(index: index)
+
     }
 
-    
+    func updateContentLabel(index: Int) {
+        if index >= 0 && index < combinedChoices.count {
+            let combineDict = combinedChoices[index]
 
+            if let question = combineDict["question"] as? String {
+                contentLabel.text = question
+            } else {
+                print("Question is not a string or not found")
+            }
+        } else {
+            print("Index out of range")
+        }
+    }
+
+    func updateSelectionButtons(index: Int) {
+        if index >= 0 && index < combinedChoices.count {
+            let combineDict = combinedChoices[index]
+
+            if let choices = combineDict["description"] as? String {
+                selectButtonOne.setTitle(choices, for: .normal)
+                print(choices)
+            }
+        }
+    }
+
+    // 建立一個底層邏輯去判斷sender.title的內容是否符合combineChoicesData的內容
+    // if yes 所選的城市 +10分，選分最高的城市 將選擇的城市 座標傳到 imaps.
     @IBAction func tapSelectButtonOne(_ sender: UIButton) {
+        index += 1
         print("tpaSelectButtonOne")
+
+
     }
 
     @IBAction func tapSelectButtonTwo(_ sender: UIButton) {
+        index += 1
         print("tapSelectButtonTwo")
     }
 
     @IBAction func tapSelectButtonThree(_ sender: UIButton) {
+        index += 1
         print("tapSelectButtonThree")
     }
 
     @IBAction func tapSelectButtonFour(_ sender: UIButton) {
+        index += 1
         print("tapSelectButtonFour")
     }
 

@@ -15,7 +15,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitle: UILabel!
 
-    var index: Int = 0
+    var currentPictureIndex: Int = 0
     let pictureNameArray: [String] = [
         "HomePage_Tokyo",
         "HomePage_Toronto",
@@ -49,7 +49,7 @@ class HomePageViewController: UIViewController {
         subtitle.textColor = UIColor.systemGray3
 
         // imageView
-        imageView.image = UIImage(named: pictureNameArray[index])
+        imageView.image = UIImage(named: pictureNameArray[currentPictureIndex])
         imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 175
         imageView.clipsToBounds = true
@@ -64,24 +64,23 @@ class HomePageViewController: UIViewController {
     }
 
     @IBAction func pageControlValueChanged(_ sender: UIPageControl) {
-        index = sender.currentPage
-        imageView.image = UIImage(named: pictureNameArray[index])
+        currentPictureIndex = sender.currentPage
+        imageView.image = UIImage(named: pictureNameArray[currentPictureIndex])
     }
 
     @IBAction func changePageBySwipe(_ sender: UISwipeGestureRecognizer) {
 
         if sender.direction == .left {
-            index = (index - 1 + pictureNameArray.count ) % pictureNameArray.count
-            imageView.image = UIImage(named: pictureNameArray[index])
-
-            print(index)
+            // Avoid currentPictureIndex out of range, so ADD the pictureNameArray.count into the currentPictureIndex to ensure the currentPictureIndex won't be negative.
+            currentPictureIndex = (currentPictureIndex - 1 + pictureNameArray.count ) % pictureNameArray.count
+            imageView.image = UIImage(named: pictureNameArray[currentPictureIndex])
+            print(currentPictureIndex)
             print("Left Swipe")
 
         } else if sender.direction == .right {
-            index = (index + 1) % pictureNameArray.count
-            imageView.image = UIImage(named: pictureNameArray[index])
-
-            print(index)
+            currentPictureIndex = (currentPictureIndex + 1) % pictureNameArray.count
+            imageView.image = UIImage(named: pictureNameArray[currentPictureIndex])
+            print(currentPictureIndex)
             print("Right Swipe")
         }
 
