@@ -21,7 +21,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
 
         print("經度是: \(latitude), 緯度是: \(longitude)")
-        print(cityCoordinates.count)
+        print(City.allCases.count)
+        print(City.Vancouver.coordinates)
         configureMapView()
 
     }

@@ -16,6 +16,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var subtitle: UILabel!
 
     var currentPictureIndex: Int = 0
+    
     let pictureNameArray: [String] = [
         "HomePage_Tokyo",
         "HomePage_Toronto",

@@ -92,7 +92,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="tapNextPageButton:" destination="jgn-aX-gI4" eventType="touchUpInside" id="dHN-7Q-fQA"/>
-                                    <segue destination="fzF-DN-KoI" kind="show" id="h5J-F1-8Gb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Np-y2-ZA6">
@@ -117,7 +116,7 @@
                     <navigationItem key="navigationItem" id="mgP-QL-0OF"/>
                     <connections>
                         <outlet property="contentLabel" destination="8vp-Ke-3Wh" id="0C1-Te-B6F"/>
-                        <outlet property="nextPageButton" destination="OP2-7v-Ba1" id="gk4-5v-BJ9"/>
+                        <outlet property="nextButton" destination="OP2-7v-Ba1" id="gk4-5v-BJ9"/>
                         <outlet property="selectButtonFour" destination="BTL-Yk-Sx1" id="fLb-mS-AiE"/>
                         <outlet property="selectButtonOne" destination="S8N-uT-hRv" id="6hH-E7-SwL"/>
                         <outlet property="selectButtonThree" destination="hsk-cs-9GL" id="o1s-WD-LTb"/>
@@ -127,7 +126,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8F-CZ-496" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796.7289719626165" y="-12.311015118790497"/>
+            <point key="canvasLocation" x="2795.3271028037379" y="-12.311015118790497"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="0cd-BW-nqm">
@@ -356,6 +355,7 @@ own adventure</string>
             <point key="canvasLocation" x="4400.467289719626" y="-12.311015118790497"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="HomePage_Tokyo" width="1024" height="1024"/>
         <systemColor name="labelColor">

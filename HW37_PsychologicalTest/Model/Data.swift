@@ -22,17 +22,17 @@ var questions: [Question] = [
         question: "What is your favorite weather?",
         answers: [
             Answer(text: "Mild with distinct seasons", city: "Tokyo"),
-            Answer(text: "Warm and sunny", city: "Sydney"),
-            Answer(text: "Cool and rainy", city: "London"),
-            Answer(text: "Cold with snow", city: "Toronto")
+            Answer(text: "Warm and sunny",             city: "Sydney"),
+            Answer(text: "Cool and rainy",             city: "London"),
+            Answer(text: "Cold with snow",             city: "Toronto")
         ]
     ),
     Question(
         question: "What is your pace of life?",
         answers: [
-            Answer(text: "Fast-paced and energetic", city: "New York"),
-            Answer(text: "Artistic with a rich history", city: "Paris"),
-            Answer(text: "Relaxed and close to nature", city: "Auckland"),
+            Answer(text: "Fast-paced and energetic",               city: "New York"),
+            Answer(text: "Artistic with a rich history",           city: "Paris"),
+            Answer(text: "Relaxed and close to nature",            city: "Auckland"),
             Answer(text: "Technologically advanced and efficient", city: "Tokyo")
         ]
     ),
@@ -40,8 +40,8 @@ var questions: [Question] = [
         question: "What is your food preference?",
         answers: [
             Answer(text: "International cuisine and cultural diversity", city: "New York"),
-            Answer(text: "Traditional dishes and authentic flavors", city: "Rome"),
-            Answer(text: "Abundant seafood and fresh fruits", city: "Sydney"),
+            Answer(text: "Traditional dishes and authentic flavors",     city: "Rome"),
+            Answer(text: "Abundant seafood and fresh fruits",            city: "Sydney"),
             Answer(text: "Convenient fast food and a variety of snacks", city: "Seoul")
         ]
     ),
@@ -49,9 +49,9 @@ var questions: [Question] = [
         question: "What is your preferred leisure activity?",
         answers: [
             Answer(text: "Outdoor adventures and exploration", city: "Vancouver"),
-            Answer(text: "Shopping and fashion", city: "Paris"),
-            Answer(text: "Cultural arts and museum visits", city: "London"),
-            Answer(text: "Music and nightlife", city: "Chicago")
+            Answer(text: "Shopping and fashion",               city: "Paris"),
+            Answer(text: "Cultural arts and museum visits",    city: "London"),
+            Answer(text: "Music and nightlife",                city: "Chicago")
         ]
     )
 ]
@@ -73,7 +73,7 @@ enum City: String, CaseIterable {
         switch self {
             case .Tokyo:
                 return (35.6895, 139.6917)
-            case .Sydney: 
+            case .Sydney:
                 return (-33.8688, 151.2093)
             case .London:
                 return (51.5074, -0.1278)
@@ -95,7 +95,9 @@ enum City: String, CaseIterable {
                 return (41.8781, -87.6298)
         }
     }
+   
 }
+
 
 
 // CityDescription
@@ -139,3 +141,53 @@ let cities: [CityDescription] = [
         cityName: "Chicago",
         description: "Famed for its bold architecture, jazz music, and Windy City charm. Boasts a stunning skyline, diverse neighborhoods, and is known for its deep-dish pizza and sports culture.")
 ]
+
+let pictureNameArray: [String] = [
+    "HomePage_Tokyo",
+    "HomePage_Toronto",
+    "HomePage_Rome",
+    "HomePage_London",
+    "HomePage_Sydney"
+]
+
+enum CityValue: CaseIterable {
+    case Tokyo
+    case Sydney
+    case London
+    case Toronto
+    case NewYork
+    case Paris
+    case Auckland
+    case Rome
+    case Seoul
+    case Vancouver
+    case Chicago
+
+    var cityCode: Int {
+        switch self {
+            case .Tokyo:
+                return 1
+            case .Sydney:
+                return 2
+            case .London:
+                return 3
+            case .Toronto:
+                return 4
+            case .NewYork:
+                return 5
+            case .Paris:
+                return 6
+            case .Auckland:
+                return 7
+            case .Rome:
+                return 8
+            case .Seoul:
+                return 9
+            case .Vancouver:
+                return 10
+            case .Chicago:
+                return 11
+
+        }
+    }
+}

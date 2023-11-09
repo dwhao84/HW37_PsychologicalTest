@@ -59,21 +59,6 @@ class ResultViewController: UIViewController {
 
     }
 
-    func updateTextViewContent() {
-        // Assuming resultIndex is defined somewhere in your code and within the bounds of citiesDescription array
-        contentTextView.text = citiesDescription[resultIndex]["description"]
-
-        var cityNamesText = ""  // Renamed to avoid confusion with "cityName"
-
-        for cityInfo in citiesDescription {
-            if let name = cityInfo["cityName"] {
-                cityNamesText += name + "\n"  // Appends the city name to the cityNamesText string
-            }
-        }
-        print(cityNamesText)
-    }
-
-
 
     @IBAction func imageViewPageChanged(_ sender: UISwipeGestureRecognizer) {
 
