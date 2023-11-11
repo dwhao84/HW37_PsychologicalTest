@@ -49,7 +49,7 @@ class ResultViewController: UIViewController {
         pageControl.currentPageIndicatorTintColor = .white
         view.addSubview(pageControl)
 
-
+        // contentTextView
         contentTextView.delegate = self
         contentTextView.textColor = .darkGray
         contentTextView.isSelectable = true

@@ -46,7 +46,7 @@
                                     <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapSelectButtonTwo:" destination="jgn-aX-gI4" eventType="touchUpInside" id="rsa-Dj-1UE"/>
+                                    <action selector="answerButtonTwoTapped:" destination="jgn-aX-gI4" eventType="touchUpInside" id="rsa-Dj-1UE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsk-cs-9GL">
@@ -62,7 +62,7 @@
                                     <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapSelectButtonThree:" destination="jgn-aX-gI4" eventType="touchUpInside" id="C3q-LI-gbc"/>
+                                    <action selector="answerButtonThreeTapped:" destination="jgn-aX-gI4" eventType="touchUpInside" id="C3q-LI-gbc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTL-Yk-Sx1">
@@ -78,12 +78,16 @@
                                     <color key="baseForegroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tapSelectButtonFour:" destination="jgn-aX-gI4" eventType="touchUpInside" id="fJt-A4-ehO"/>
+                                    <action selector="answerButtonFourTapped:" destination="jgn-aX-gI4" eventType="touchUpInside" id="fJt-A4-ehO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP2-7v-Ba1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP2-7v-Ba1">
                                 <rect key="frame" x="39" y="785" width="350" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fgS-7y-uE7"/>
+                                    <constraint firstAttribute="width" constant="350" id="hE5-wf-ihC"/>
+                                    <constraint firstAttribute="width" secondItem="OP2-7v-Ba1" secondAttribute="height" multiplier="35:6" id="r6V-XG-GU6"/>
+                                </constraints>
                                 <color key="tintColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next Page">
@@ -112,6 +116,11 @@
                         <viewLayoutGuide key="safeArea" id="xLU-bB-UbF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xLU-bB-UbF" firstAttribute="bottom" secondItem="OP2-7v-Ba1" secondAttribute="bottom" constant="47" id="3MG-DO-tbA"/>
+                            <constraint firstItem="xLU-bB-UbF" firstAttribute="trailing" secondItem="OP2-7v-Ba1" secondAttribute="trailing" constant="39" id="Vow-l8-beW"/>
+                            <constraint firstItem="OP2-7v-Ba1" firstAttribute="leading" secondItem="xLU-bB-UbF" secondAttribute="leading" constant="39" id="q4h-8w-CaU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mgP-QL-0OF"/>
                     <connections>
@@ -136,9 +145,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-e0-Mjg">
-                                <rect key="frame" x="39" y="783" width="350" height="60"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-ru-ISb">
+                                <rect key="frame" x="64" y="501" width="300" height="248"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-J4-3rA">
+                                <rect key="frame" x="39" y="108" width="350" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5ou-0x-fBW" appends="YES" id="Dwm-UM-VUQ"/>
+                                    <outletCollection property="gestureRecognizers" destination="Wci-oH-s5f" appends="YES" id="NWv-B8-gbd"/>
+                                </connections>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-Os-WQc">
+                                <rect key="frame" x="156" y="432" width="115.33333333333334" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pageControlValueChanged:" destination="fzF-DN-KoI" eventType="valueChanged" id="Bwv-57-xnA"/>
+                                </connections>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0N-e0-Mjg">
+                                <rect key="frame" x="39" y="785" width="350" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m0N-e0-Mjg" secondAttribute="height" multiplier="35:6" id="R5p-O8-Bh6"/>
+                                    <constraint firstAttribute="width" constant="350" id="ZVW-r7-HEf"/>
+                                    <constraint firstAttribute="height" constant="60" id="t6d-54-bQ5"/>
+                                </constraints>
                                 <color key="tintColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Find your place!">
@@ -150,45 +189,15 @@
                                     <segue destination="Psa-tA-sHB" kind="show" id="7BX-S9-giV"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-J4-3rA">
-                                <rect key="frame" x="39" y="113" width="350" height="350"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="5ou-0x-fBW" appends="YES" id="Dwm-UM-VUQ"/>
-                                    <outletCollection property="gestureRecognizers" destination="Wci-oH-s5f" appends="YES" id="NWv-B8-gbd"/>
-                                </connections>
-                            </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-Os-WQc">
-                                <rect key="frame" x="156" y="437" width="116" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="pageControlValueChanged:" destination="fzF-DN-KoI" eventType="valueChanged" id="Bwv-57-xnA"/>
-                                </connections>
-                            </pageControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-ru-ISb">
-                                <rect key="frame" x="64" y="501" width="300" height="248"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aEw-Hl-Wr8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m0N-e0-Mjg" firstAttribute="centerX" secondItem="YWs-bv-S73" secondAttribute="centerX" id="cw4-uJ-9Jb"/>
+                            <constraint firstAttribute="bottom" secondItem="m0N-e0-Mjg" secondAttribute="bottom" constant="81" id="grK-ah-44J"/>
+                        </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" id="Jbx-PE-bcw">
-                            <view key="customView" contentMode="scaleToFill" id="Kja-B8-9Uj">
-                                <rect key="frame" x="20" y="10.666666666666664" width="388" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="ddS-Cs-kHw"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -210,7 +219,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3614.0186915887848" y="-12.311015118790497"/>
+            <point key="canvasLocation" x="3613.953488372093" y="-12.875536480686696"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="e1X-1U-y6o">
@@ -230,9 +239,12 @@
                                     <outletCollection property="gestureRecognizers" destination="o18-8b-d7D" appends="YES" id="Uz1-6W-Z0o"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-3u-CKg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-3u-CKg">
                                 <rect key="frame" x="39" y="787" width="350" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gWm-Qj-8sD"/>
+                                    <constraint firstAttribute="width" secondItem="jSP-3u-CKg" secondAttribute="height" multiplier="35:6" id="xeK-tO-XcH"/>
+                                </constraints>
                                 <color key="tintColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Text">
@@ -272,6 +284,11 @@ own adventure</string>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J4H-VU-muX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jSP-3u-CKg" firstAttribute="leading" secondItem="J4H-VU-muX" secondAttribute="leading" constant="39" id="9OQ-EM-fDG"/>
+                            <constraint firstItem="J4H-VU-muX" firstAttribute="bottom" secondItem="jSP-3u-CKg" secondAttribute="bottom" constant="45" id="oXY-k3-Wxl"/>
+                            <constraint firstItem="J4H-VU-muX" firstAttribute="trailing" secondItem="jSP-3u-CKg" secondAttribute="trailing" constant="39" id="zDq-tR-SP3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7OD-dZ-4C6"/>
                     <connections>
@@ -326,18 +343,25 @@ own adventure</string>
                                 <rect key="frame" x="156" y="365" width="116" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZ8-rz-P7G">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZ8-rz-P7G">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sQi-Ce-O2A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dZ8-rz-P7G" firstAttribute="centerX" secondItem="OAS-hE-JAp" secondAttribute="centerX" id="5Kq-tU-9L7"/>
+                            <constraint firstItem="dZ8-rz-P7G" firstAttribute="trailing" secondItem="sQi-Ce-O2A" secondAttribute="trailing" id="6N5-jD-t4t"/>
+                            <constraint firstItem="dZ8-rz-P7G" firstAttribute="top" secondItem="OAS-hE-JAp" secondAttribute="top" id="J39-cw-nxj"/>
+                            <constraint firstItem="dZ8-rz-P7G" firstAttribute="centerY" secondItem="OAS-hE-JAp" secondAttribute="centerY" id="TGx-8w-ucX"/>
+                            <constraint firstItem="dZ8-rz-P7G" firstAttribute="leading" secondItem="sQi-Ce-O2A" secondAttribute="leading" id="ZwQ-i5-rNN"/>
+                            <constraint firstAttribute="bottom" secondItem="dZ8-rz-P7G" secondAttribute="bottom" id="q5n-X2-AUD"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="ZYL-pc-3kM">
-                            <view key="customView" contentMode="scaleToFill" id="7Qf-nl-HCG">
+                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="7Qf-nl-HCG">
                                 <rect key="frame" x="20" y="10.666666666666664" width="388" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -352,7 +376,7 @@ own adventure</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0SH-dD-TwI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4400.467289719626" y="-12.311015118790497"/>
+            <point key="canvasLocation" x="4400.390625" y="-12.737920937042459"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

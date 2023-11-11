@@ -59,7 +59,12 @@ class HomePageViewController: UIViewController {
 
         // pageControl
         pageControl.tintColor = .white
-        pageControl.currentPageIndicatorTintColor = UIColor(red: 24/255, green: 153/255, blue: 105/255, alpha: 1)
+        pageControl.currentPageIndicatorTintColor =
+        UIColor(
+            red:   24/255,
+            green: 153/255,
+            blue:  105/255,
+            alpha: 1)
         view.addSubview(pageControl)
 
     }

@@ -22,14 +22,25 @@ class PsychologicalTestViewController: UIViewController {
     var questionIndex: Int = 0
     var answerIndex : Int = 0
 
+    var questionArray: Int = questions.count - 1
+
+    var sumScore: Int = 0
+
+    var answerButtonArray: [UIButton] {
+        [ answerButtonOne,
+          answerButtonTwo,
+          answerButtonThree,
+          answerButtonFour
+        ]
+    }
+
+    var scoreValue: [Int] = [Int] ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("IntoThePsyVC")
-
         updateUI ()
-
 
     }
 
@@ -38,8 +49,6 @@ class PsychologicalTestViewController: UIViewController {
         nextButton.tintColor = UIColor(red: 24/255, green: 153/255, blue: 105/255, alpha: 1)
         nextButton.isUserInteractionEnabled = true
         nextButton.isEnabled = true
-
-        let answerButtonArray: [UIButton] = [answerButtonOne, answerButtonTwo, answerButtonThree, answerButtonFour]
 
         for answerButtons in answerButtonArray {
             answerButtons.tintColor = UIColor.systemGray5
@@ -64,35 +73,53 @@ class PsychologicalTestViewController: UIViewController {
     }
 
     func updateTheContentText () {
+
+        // titleLabel
+        titleLabel.text = "Question\(questionIndex + 1)"
+
         // questionLabel text update
         contentLabel.text = questions[questionIndex].question
 
-        // selectButtonOne to Four update
         answerButtonOne.setTitle(questions[questionIndex].answers[0].text, for: .normal)
         answerButtonTwo.setTitle(questions[questionIndex].answers[1].text, for: .normal)
         answerButtonThree.setTitle(questions[questionIndex].answers[2].text, for: .normal)
         answerButtonFour.setTitle(questions[questionIndex].answers[3].text, for: .normal)
+
+        answerButtonOne.tag   = questions[questionIndex].answers[0].score
+        answerButtonTwo.tag   = questions[questionIndex].answers[1].score
+        answerButtonThree.tag = questions[questionIndex].answers[2].score
+        answerButtonFour.tag  = questions[questionIndex].answers[3].score
+    }
+
+    private func scoreCalculation () {
+        sumScore = scoreValue.reduce(0, { $0 + $1 } )
+        print(sumScore)
     }
 
     // Build the logic after the nextQuestionButtonTapped
     func questionIndexLogic () {
-        let countForQuestion = questions.count - 1
-        print(questionIndex)
-        if questionIndex < countForQuestion {
+
+        if questionIndex < questionArray {
             questionIndex += 1
         } else {
            // peformSegue
+           scoreCalculation()
 
         }
     }
-
 
     // 建立一個底層邏輯去判斷sender.title的內容是否符合combineChoicesData的內容
     // if yes 所選的城市 +10分，選分最高的城市 將選擇的城市 座標傳到 imaps.
     @IBAction func answerButtonOneTapped(_ sender: UIButton) {
         print(questionIndex)
-        print("tpaSelectButtonOne")
+        print("answerButtonOneTapped")
         questionIndexLogic()
+
+        scoreValue.append(sender.tag)
+        print(sender.tag)
+        print(scoreValue)
+
+        scoreCalculation()
 
         // Rest of Buttons will be is NOT Enabled
         answerButtonTwo.isEnabled = false
@@ -100,10 +127,15 @@ class PsychologicalTestViewController: UIViewController {
         answerButtonFour.isEnabled = false
     }
 
-    @IBAction func tapSelectButtonTwo(_ sender: UIButton) {
+    @IBAction func answerButtonTwoTapped(_ sender: UIButton) {
         print(questionIndex)
-        print("tapSelectButtonTwo")
-        questionIndexLogic()
+        print("answerButtonTwoTapped")
+
+        scoreValue.append(sender.tag)
+        print(sender.tag)
+        print(scoreValue)
+
+        scoreCalculation()
 
         // Rest of Buttons will be is NOT Enabled
         answerButtonOne.isEnabled = false
@@ -111,10 +143,15 @@ class PsychologicalTestViewController: UIViewController {
         answerButtonFour.isEnabled = false
     }
 
-    @IBAction func tapSelectButtonThree(_ sender: UIButton) {
+    @IBAction func answerButtonThreeTapped(_ sender: UIButton) {
         print(questionIndex)
-        print("tapSelectButtonThree")
-        questionIndexLogic()
+        print("answerButtonThreeTapped")
+
+        scoreValue.append(sender.tag)
+        print(sender.tag)
+        print(scoreValue)
+
+        scoreCalculation()
 
         // Rest of Buttons will be is NOT Enabled
         answerButtonOne.isEnabled = false
@@ -122,10 +159,15 @@ class PsychologicalTestViewController: UIViewController {
         answerButtonFour.isEnabled = false
     }
 
-    @IBAction func tapSelectButtonFour(_ sender: UIButton) {
+    @IBAction func answerButtonFourTapped(_ sender: UIButton) {
         print(questionIndex)
-        print("tapSelectButtonThree")
-        questionIndexLogic()
+        print("answerButtonFourTapped")
+
+        scoreValue.append(sender.tag)
+        print(sender.tag)
+        print(scoreValue)
+
+        scoreCalculation()
 
         // Rest of Buttons will be is NOT Enabled
         answerButtonOne.isEnabled = false
@@ -139,7 +181,6 @@ class PsychologicalTestViewController: UIViewController {
         questionIndexLogic ()
         updateTheContentText()
 
-        let answerButtonArray: [UIButton] = [answerButtonOne, answerButtonTwo, answerButtonThree, answerButtonFour]
         for answerButtons in answerButtonArray {
             answerButtons.isEnabled = true
         }

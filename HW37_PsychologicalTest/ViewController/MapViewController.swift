@@ -12,17 +12,16 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
 
-    var latitude: Double = 23.6978
-    var longitude: Double = 120.9605
+    var latitude: Double?
+    var longitude: Double?
 
     var annotation = MKPointAnnotation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("經度是: \(latitude), 緯度是: \(longitude)")
+        print("經度是: \(latitude!), 緯度是: \(longitude!)")
         print(City.allCases.count)
-        print(City.Vancouver.coordinates)
         configureMapView()
 
     }
@@ -35,8 +34,8 @@ class MapViewController: UIViewController {
         // region
         mapView.region = MKCoordinateRegion(
             center:    CLLocationCoordinate2D(
-            latitude:  CLLocationDegrees(latitude),
-            longitude: CLLocationDegrees(longitude)),
+                latitude:  CLLocationDegrees(latitude!),
+            longitude: CLLocationDegrees(longitude!)),
             latitudinalMeters: 10000,
             longitudinalMeters: 10000)
         mapView.isZoomEnabled = true
