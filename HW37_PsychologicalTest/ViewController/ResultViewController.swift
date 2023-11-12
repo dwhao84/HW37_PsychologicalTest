@@ -22,6 +22,13 @@ class ResultViewController: UIViewController {
     var finalScore: Int?
 
     var score: Int = 0
+    var cityName: String = String()
+    var pageControlIndex: Int = 1
+
+    private var latitudeInResultVC  : Double = Double()
+    private var longtitudeInResultVC: Double = Double()
+
+//    let cityName: String = City.rawValue
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +40,20 @@ class ResultViewController: UIViewController {
     }
 
 
-
-    func result() {
+    // MARK: - Function
+    private func result() {
         let cityScore = CityScore(score: finalScore!)
         if let city = cityScore.city {
             print("The city for your score is: \(city.rawValue)")
+            cityName = city.rawValue
+            contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
+            
+            //contentTextView.text
+            latitudeInResultVC = city.coordinates.latitude
+            longtitudeInResultVC = city.coordinates.longitude
+
+
+
         } else {
             print("No city corresponds to this score.")
         }
@@ -46,7 +62,6 @@ class ResultViewController: UIViewController {
 
 
     func configureUI() {
-
         // findYourPlaceButton
         findYourPlaceButton.setTitle("Find your Place belong on Map!", for: .normal)
         findYourPlaceButton.tintColor = UIColor(red: 24/255, green: 153/255, blue: 105/255, alpha: 1)
@@ -55,7 +70,6 @@ class ResultViewController: UIViewController {
         view.addSubview(findYourPlaceButton)
 
         // contentImageView
-        contentImageView.image = UIImage(named: "")
         contentImageView.layer.cornerRadius = 10
         contentImageView.clipsToBounds = true
         contentImageView.isUserInteractionEnabled = true
@@ -73,28 +87,57 @@ class ResultViewController: UIViewController {
         contentTextView.isSelectable = true
         contentTextView.isFindInteractionEnabled = true
         view.addSubview(contentTextView)
+
     }
 
-
+    // MARK: - IBAction:
     @IBAction func imageViewPageChanged(_ sender: UISwipeGestureRecognizer) {
-        if sender.direction == .left {
 
-        } else if sender.direction == .right {
+        let photosNumber: Int = 4
 
+        if sender.direction == .right {
+
+            pageControlIndex = (pageControlIndex - 1 + photosNumber) % photosNumber
+            contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex + 1)")
+            print(pageControlIndex)
+
+        } else if sender.direction == .left {
+
+            pageControlIndex += 1
+            contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
+            print("sender's direction == .right \(pageControlIndex)")
+
+            if pageControlIndex > 4 {
+                pageControlIndex = 1
+                contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
+                print("pageControlIndex > 4 && sender's direction == .right \(pageControlIndex)")
+
+            }
         }
     }
 
     @IBAction func pageControlValueChanged(_ sender: UIPageControl) {
 
+        pageControlIndex += 1
+        contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
+
+        if pageControlIndex <= 4 {
+            contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
+        } else {
+            pageControlIndex = 1
+            contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
+        }
     }
 
-
-
-
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "locationDataTransfer" {
+            let mapVC = segue.destination as? MapViewController
+            mapVC?.latitude  = latitudeInResultVC
+            mapVC?.longitude = longtitudeInResultVC
+            print("Coordinates:\(latitudeInResultVC), \(longtitudeInResultVC)")
+        }
+    }
 }
 
 extension ResultViewController: UITextViewDelegate {
-
 }

@@ -19,54 +19,74 @@ struct Answer {
 }
 
 enum CityScore: CaseIterable {
-    case tokyo, sydney, london, newYork, unknown
+    case Tokyo, Sydney, London, NewYork, Unknown
 
     init(score: Int) {
          switch score {
             case 1...4  :
-                self = .tokyo
+                self = .Tokyo
             case 5...20 :
-                self = .sydney
+                self = .Sydney
             case 21...40:
-                self = .london
+                self = .London
             case 41...80:
-                self = .newYork
+                self = .NewYork
             default:
-                self = .unknown
+                self = .Unknown
         }
     }
 
     var city: City? {
         switch self {
-            case .tokyo:
-                return .tokyo
-            case .sydney:
-                return .sydney
-            case .london:
-                return .london
-            case .newYork:
-                return .newYork
-            case .unknown:
+            case .Tokyo:
+                return .Tokyo
+            case .Sydney:
+                return .Sydney
+            case .London:
+                return .London
+            case .NewYork:
+                return .NewYork
+            case .Unknown:
                 return nil
         }
     }
 }
 
+enum Description: String, CaseIterable {
+    case Tokyo   = "Tokyo"
+    case Sydney  = "Sydney"
+    case London  = "London"
+    case NewYork = "NewYork"
+    var description: String {
+        switch self {
+            case .Tokyo:
+                    return "A bustling metropolis blending ultra-modern skyscrapers, traditional temples, and unique pop culture. Known for its diverse culinary scene, from street food vendors to Michelin-starred restaurants."
+            case .Sydney:
+                return "Famous for its stunning harbour, iconic Opera House, and the Sydney Harbour Bridge. It's a gateway to beautiful beaches, and its vibrant culture reflects its diverse population."
+            case .London:
+                return "A city steeped in history, with landmarks like the Tower of London, Buckingham Palace, and the British Museum. Known for its cultural diversity, rich theatre scene, and historic pubs"
+            case .NewYork:
+                return "Known as 'The Big Apple,' a city of iconic landmarks like the Statue of Liberty, Times Square, and Central Park. The epitome of an urban jungle, with an incredible mix of arts, culture, and business."
+        }
+    }
+}
+
+
 enum City: String, CaseIterable {
-    case tokyo      = "Tokyo"
-    case sydney     = "Sydney"
-    case london     = "London"
-    case newYork    = "New York"
+    case Tokyo      = "Tokyo"
+    case Sydney     = "Sydney"
+    case London     = "London"
+    case NewYork    = "NewYork"
 
     var coordinates: (latitude: Double, longitude: Double) {
         switch self {
-            case .tokyo:
+            case .Tokyo:
                 return (35.6895, 139.6917)
-            case .sydney:
+            case .Sydney:
                 return (-33.8688, 151.2093)
-            case .london:
+            case .London:
                 return (51.5074, -0.1278)
-            case .newYork:
+            case .NewYork:
                 return (40.7128, -74.0060)
         }
     }
@@ -78,24 +98,6 @@ struct CityDescription {
     let description: String
 }
 
-let cities: [CityDescription] = [
-    CityDescription(
-        cityName: "Tokyo",
-        description: "A bustling metropolis blending ultra-modern skyscrapers, traditional temples, and unique pop culture. Known for its diverse culinary scene, from street food vendors to Michelin-starred restaurants."
-    ),
-    CityDescription(
-        cityName: "Sydney",
-        description: "Famous for its stunning harbour, iconic Opera House, and the Sydney Harbour Bridge. It's a gateway to beautiful beaches, and its vibrant culture reflects its diverse population."
-    ),
-    CityDescription(
-        cityName: "London",
-        description: "A city steeped in history, with landmarks like the Tower of London, Buckingham Palace, and the British Museum. Known for its cultural diversity, rich theatre scene, and historic pubs."
-    ),
-    CityDescription(
-        cityName: "New York",
-        description: "Known as 'The Big Apple,' a city of iconic landmarks like the Statue of Liberty, Times Square, and Central Park. The epitome of an urban jungle, with an incredible mix of arts, culture, and business."
-    )
-]
 
 
 
@@ -137,7 +139,6 @@ let questions: [Question] = [
         ]
     )
 ]
-
 
 let pictureNameArray: [String] = [
     "HomePage_Tokyo",

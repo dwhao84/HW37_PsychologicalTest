@@ -158,14 +158,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-J4-3rA">
                                 <rect key="frame" x="39" y="108" width="350" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.88770195578231292" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5ou-0x-fBW" appends="YES" id="Dwm-UM-VUQ"/>
                                     <outletCollection property="gestureRecognizers" destination="Wci-oH-s5f" appends="YES" id="NWv-B8-gbd"/>
                                 </connections>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-Os-WQc">
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cTF-Os-WQc">
                                 <rect key="frame" x="156" y="432" width="115.33333333333334" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -187,7 +187,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="jgn-aX-gI4" eventType="touchUpInside" id="eiI-iS-uzL"/>
-                                    <segue destination="Psa-tA-sHB" kind="show" id="7BX-S9-giV"/>
+                                    <segue destination="Psa-tA-sHB" kind="show" identifier="locationDataTransfer" id="7BX-S9-giV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -362,7 +362,7 @@ own adventure</string>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="ZYL-pc-3kM">
-                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="7Qf-nl-HCG">
+                            <view key="customView" contentMode="scaleToFill" id="7Qf-nl-HCG">
                                 <rect key="frame" x="20" y="10.666666666666664" width="388" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -377,7 +377,7 @@ own adventure</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0SH-dD-TwI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4400.390625" y="-12.737920937042459"/>
+            <point key="canvasLocation" x="4446.7289719626169" y="-13.606911447084235"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.094117656349999995" green="0.59901964659999996" blue="0.40980395670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

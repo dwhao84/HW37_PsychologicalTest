@@ -17,13 +17,18 @@ class MapViewController: UIViewController {
 
     var annotation = MKPointAnnotation()
 
+    var zoomInButton: UIButton {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "plus.fill"), for: .normal)
+        return button
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("經度是: \(latitude!), 緯度是: \(longitude!)")
-        print(City.allCases.count)
         configureMapView()
-
+        view.addSubview(zoomInButton)
     }
 
     func configureMapView () {
@@ -39,15 +44,14 @@ class MapViewController: UIViewController {
             latitudinalMeters: 10000,
             longitudinalMeters: 10000)
         mapView.isZoomEnabled = true
-        mapView.mapType = .hybrid
+        mapView.mapType = .standard
 
         //annotation
-
+        mapView.addAnnotation(annotation)
+        annotation.coordinate = .init(latitude: latitude!, longitude: longitude!)
 
 
     }
-
-
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -55,4 +59,9 @@ extension MapViewController: MKMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         print("mapViewDidFinishLoadingMap")
     }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        print("didSelect the MKAnnotationView")
+    }
+
 }
