@@ -44,6 +44,14 @@ class PsychologicalTestViewController: UIViewController {
 
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "locationTransfer" {
+            let resultVC = segue.destination as? ResultViewController
+            resultVC?.finalScore = sumScore
+            print(resultVC?.finalScore ?? 0)
+        }
+    }
+
     func updateUI () {
         nextButton.setTitle("Next Question", for: .normal)
         nextButton.tintColor = UIColor(red: 24/255, green: 153/255, blue: 105/255, alpha: 1)
@@ -72,6 +80,7 @@ class PsychologicalTestViewController: UIViewController {
         updateTheContentText()
     }
 
+    // MARK: - updateTheContentText
     func updateTheContentText () {
 
         // titleLabel
@@ -80,11 +89,13 @@ class PsychologicalTestViewController: UIViewController {
         // questionLabel text update
         contentLabel.text = questions[questionIndex].question
 
+        // setTitle transfer
         answerButtonOne.setTitle(questions[questionIndex].answers[0].text, for: .normal)
         answerButtonTwo.setTitle(questions[questionIndex].answers[1].text, for: .normal)
         answerButtonThree.setTitle(questions[questionIndex].answers[2].text, for: .normal)
         answerButtonFour.setTitle(questions[questionIndex].answers[3].text, for: .normal)
 
+        // sender.tag transfer
         answerButtonOne.tag   = questions[questionIndex].answers[0].score
         answerButtonTwo.tag   = questions[questionIndex].answers[1].score
         answerButtonThree.tag = questions[questionIndex].answers[2].score
@@ -97,18 +108,20 @@ class PsychologicalTestViewController: UIViewController {
     }
 
     // Build the logic after the nextQuestionButtonTapped
-    func questionIndexLogic () {
-
+    private func questionIndexLogic () {
         if questionIndex < questionArray {
             questionIndex += 1
+            scoreCalculation()
         } else {
            // peformSegue
            scoreCalculation()
-
+           performSegue(withIdentifier: "locationTransfer", sender: self)
         }
     }
 
-    // 建立一個底層邏輯去判斷sender.title的內容是否符合combineChoicesData的內容
+
+    // MARK: - IBAction
+    //建立一個底層邏輯去判斷sender.title的內容是否符合combineChoicesData的內容
     // if yes 所選的城市 +10分，選分最高的城市 將選擇的城市 座標傳到 imaps.
     @IBAction func answerButtonOneTapped(_ sender: UIButton) {
         print(questionIndex)

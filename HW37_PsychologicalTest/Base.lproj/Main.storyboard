@@ -131,6 +131,7 @@
                         <outlet property="contentLabel" destination="8vp-Ke-3Wh" id="0C1-Te-B6F"/>
                         <outlet property="nextButton" destination="OP2-7v-Ba1" id="gk4-5v-BJ9"/>
                         <outlet property="titleLabel" destination="9Np-y2-ZA6" id="iMA-s2-aEj"/>
+                        <segue destination="fzF-DN-KoI" kind="show" identifier="locationTransfer" destinationCreationSelector="peformSegue:sender:segueIdentifier:" id="hWL-gH-udO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8F-CZ-496" sceneMemberID="firstResponder"/>
