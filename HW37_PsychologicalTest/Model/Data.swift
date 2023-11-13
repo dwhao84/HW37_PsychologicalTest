@@ -9,7 +9,7 @@ import UIKit
 
 struct Question {
     var question:  String
-    var answers : [Answer]
+    var answers :  [Answer]
 }
 
 struct Answer {
@@ -52,26 +52,6 @@ enum CityScore: CaseIterable {
     }
 }
 
-enum Description: String, CaseIterable {
-    case Tokyo   = "Tokyo"
-    case Sydney  = "Sydney"
-    case London  = "London"
-    case NewYork = "NewYork"
-    var description: String {
-        switch self {
-            case .Tokyo:
-                    return "A bustling metropolis blending ultra-modern skyscrapers, traditional temples, and unique pop culture. Known for its diverse culinary scene, from street food vendors to Michelin-starred restaurants."
-            case .Sydney:
-                return "Famous for its stunning harbour, iconic Opera House, and the Sydney Harbour Bridge. It's a gateway to beautiful beaches, and its vibrant culture reflects its diverse population."
-            case .London:
-                return "A city steeped in history, with landmarks like the Tower of London, Buckingham Palace, and the British Museum. Known for its cultural diversity, rich theatre scene, and historic pubs"
-            case .NewYork:
-                return "Known as 'The Big Apple,' a city of iconic landmarks like the Statue of Liberty, Times Square, and Central Park. The epitome of an urban jungle, with an incredible mix of arts, culture, and business."
-        }
-    }
-}
-
-
 enum City: String, CaseIterable {
     case Tokyo      = "Tokyo"
     case Sydney     = "Sydney"
@@ -90,15 +70,20 @@ enum City: String, CaseIterable {
                 return (40.7128, -74.0060)
         }
     }
+
+    var context: String {
+        switch self {
+            case .Tokyo:
+                    return "A bustling metropolis blending ultra-modern skyscrapers, traditional temples, and unique pop culture. Known for its diverse culinary scene, from street food vendors to Michelin-starred restaurants."
+            case .Sydney:
+                return "Famous for its stunning harbour, iconic Opera House, and the Sydney Harbour Bridge. It's a gateway to beautiful beaches, and its vibrant culture reflects its diverse population."
+            case .London:
+                return "A city steeped in history, with landmarks like the Tower of London, Buckingham Palace, and the British Museum. Known for its cultural diversity, rich theatre scene, and historic pubs"
+            case .NewYork:
+                return "Known as 'The Big Apple,' a city of iconic landmarks like the Statue of Liberty, Times Square, and Central Park. The epitome of an urban jungle, with an incredible mix of arts, culture, and business."
+        }
+    }
 }
-
-// CityDescription
-struct CityDescription {
-    let cityName: String
-    let description: String
-}
-
-
 
 
 let questions: [Question] = [

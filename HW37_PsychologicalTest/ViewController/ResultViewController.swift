@@ -28,6 +28,8 @@ class ResultViewController: UIViewController {
     private var latitudeInResultVC  : Double = Double()
     private var longtitudeInResultVC: Double = Double()
 
+    var citiesContent: String = String()
+
 //    let cityName: String = City.rawValue
 
     override func viewDidLoad() {
@@ -42,17 +44,20 @@ class ResultViewController: UIViewController {
 
     // MARK: - Function
     private func result() {
+        var citiesContent = City.allCases
         let cityScore = CityScore(score: finalScore!)
         if let city = cityScore.city {
-            print("The city for your score is: \(city.rawValue)")
+
             cityName = city.rawValue
+            print(cityName)
+
             contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
             
             //contentTextView.text
             latitudeInResultVC = city.coordinates.latitude
             longtitudeInResultVC = city.coordinates.longitude
 
-
+            contentTextView.text = city.context
 
         } else {
             print("No city corresponds to this score.")
