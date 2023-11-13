@@ -89,10 +89,5 @@ class HomePageViewController: UIViewController {
             print(currentPictureIndex)
             print("Right Swipe")
         }
-
     }
-
-
-
-
 }

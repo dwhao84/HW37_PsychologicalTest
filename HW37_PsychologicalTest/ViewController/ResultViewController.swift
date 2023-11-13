@@ -28,10 +28,6 @@ class ResultViewController: UIViewController {
     private var latitudeInResultVC  : Double = Double()
     private var longtitudeInResultVC: Double = Double()
 
-    var citiesContent: String = String()
-
-//    let cityName: String = City.rawValue
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,10 +49,11 @@ class ResultViewController: UIViewController {
 
             contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
             
-            //contentTextView.text
+            // Latitude & Longtitude
             latitudeInResultVC = city.coordinates.latitude
             longtitudeInResultVC = city.coordinates.longitude
 
+            //contentTextView.text
             contentTextView.text = city.context
 
         } else {
@@ -145,4 +142,14 @@ class ResultViewController: UIViewController {
 }
 
 extension ResultViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        print("textViewDidChange")
+    }
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        print("textViewShouldEndEditing")
+        return true
+    }
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        print("textViewDidChangeSelection")
+    }
 }
