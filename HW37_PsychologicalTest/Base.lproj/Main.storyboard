@@ -157,7 +157,7 @@
                                 </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-ru-ISb">
-                                <rect key="frame" x="63" y="466" width="300" height="248"/>
+                                <rect key="frame" x="39" y="522" width="350" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -190,6 +190,13 @@
                                     <action selector="pageControlValueChanged:" destination="fzF-DN-KoI" eventType="valueChanged" id="Bwv-57-xnA"/>
                                 </connections>
                             </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NR-TT-hN4">
+                                <rect key="frame" x="39" y="480" width="350" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aEw-Hl-Wr8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -202,6 +209,7 @@
                     <navigationItem key="navigationItem" id="ddS-Cs-kHw"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cityNameTitleLabel" destination="5NR-TT-hN4" id="E4T-F3-CWX"/>
                         <outlet property="contentImageView" destination="3Z1-J4-3rA" id="tOe-UI-Dva"/>
                         <outlet property="contentTextView" destination="jzx-ru-ISb" id="dOj-89-kIY"/>
                         <outlet property="findYourPlaceButton" destination="m0N-e0-Mjg" id="a8Y-3O-H1b"/>
@@ -220,7 +228,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3613.953488372093" y="-12.875536480686696"/>
+            <point key="canvasLocation" x="3612.6168224299063" y="-12.958963282937367"/>
         </scene>
         <!--Home Page View Controller-->
         <scene sceneID="e1X-1U-y6o">
@@ -362,7 +370,7 @@ own adventure</string>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" id="ZYL-pc-3kM">
-                            <view key="customView" contentMode="scaleToFill" misplaced="YES" id="7Qf-nl-HCG">
+                            <view key="customView" contentMode="scaleToFill" id="7Qf-nl-HCG">
                                 <rect key="frame" x="20" y="10.666666666666664" width="388" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

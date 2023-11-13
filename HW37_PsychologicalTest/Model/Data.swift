@@ -73,7 +73,7 @@ enum City: String, CaseIterable {
 
     var context: String {
         switch self {
-            case .Tokyo:
+            case .Tokyo :
                     return "A bustling metropolis blending ultra-modern skyscrapers, traditional temples, and unique pop culture. Known for its diverse culinary scene, from street food vendors to Michelin-starred restaurants."
             case .Sydney:
                 return "Famous for its stunning harbour, iconic Opera House, and the Sydney Harbour Bridge. It's a gateway to beautiful beaches, and its vibrant culture reflects its diverse population."
@@ -81,6 +81,19 @@ enum City: String, CaseIterable {
                 return "A city steeped in history, with landmarks like the Tower of London, Buckingham Palace, and the British Museum. Known for its cultural diversity, rich theatre scene, and historic pubs"
             case .NewYork:
                 return "Known as 'The Big Apple,' a city of iconic landmarks like the Statue of Liberty, Times Square, and Central Park. The epitome of an urban jungle, with an incredible mix of arts, culture, and business."
+        }
+    }
+
+    var emoji: String {
+        switch self {
+            case .Tokyo:
+                return "🇯🇵"
+            case .Sydney:
+                return "🇦🇺"
+            case .London:
+                return "🇬🇧"
+            case .NewYork:
+                return "🇺🇸"
         }
     }
 }

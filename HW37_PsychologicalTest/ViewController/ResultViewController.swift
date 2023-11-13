@@ -14,6 +14,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var findYourPlaceButton: UIButton!
 
+    @IBOutlet weak var cityNameTitleLabel: UILabel!
+
     @IBOutlet weak var pageControl: UIPageControl!
 
     var resultIndex: Int = 0
@@ -40,12 +42,13 @@ class ResultViewController: UIViewController {
 
     // MARK: - Function
     private func result() {
-        var citiesContent = City.allCases
         let cityScore = CityScore(score: finalScore!)
         if let city = cityScore.city {
 
             cityName = city.rawValue
             print(cityName)
+
+            cityNameTitleLabel.text = "\(cityName + city.emoji)"
 
             contentImageView.image = UIImage(named: "\(cityName)-\(pageControlIndex)")
             
