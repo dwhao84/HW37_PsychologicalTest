@@ -24,7 +24,6 @@ class MapViewController: UIViewController {
     }
 
     func configureMapView () {
-
         // Add delegate
         mapView.delegate = self
 
@@ -41,8 +40,6 @@ class MapViewController: UIViewController {
         //annotation
         mapView.addAnnotation(annotation)
         annotation.coordinate = .init(latitude: latitude!, longitude: longitude!)
-
-
     }
 }
 

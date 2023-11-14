@@ -198,7 +198,4 @@ class PsychologicalTestViewController: UIViewController {
             answerButtons.isEnabled = true
         }
     }
-
-
-
 }

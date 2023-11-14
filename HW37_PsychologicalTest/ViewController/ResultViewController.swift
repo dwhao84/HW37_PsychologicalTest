@@ -92,7 +92,6 @@ class ResultViewController: UIViewController {
         contentTextView.isSelectable = true
         contentTextView.isFindInteractionEnabled = true
         view.addSubview(contentTextView)
-
     }
 
     // MARK: - IBAction:
