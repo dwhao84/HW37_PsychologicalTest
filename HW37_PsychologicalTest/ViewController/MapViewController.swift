@@ -17,18 +17,10 @@ class MapViewController: UIViewController {
 
     var annotation = MKPointAnnotation()
 
-    var zoomInButton: UIButton {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "plus.fill"), for: .normal)
-        return button
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         print("經度是: \(latitude!), 緯度是: \(longitude!)")
         configureMapView()
-        view.addSubview(zoomInButton)
     }
 
     func configureMapView () {
